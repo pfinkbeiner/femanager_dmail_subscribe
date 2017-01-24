@@ -1,0 +1,16 @@
+plugin.tx_femanager {
+    view {
+        layoutRootPaths {
+            10 = {$plugin.tx_femanager.view.layoutRootPath}
+            20 = {$plugin.tx_femanagerdmailsubscribe.view.layoutRootPath}
+        }
+        partialRootPaths {
+            10 = {$plugin.tx_femanager.view.partialRootPath}
+            20 = {$plugin.tx_femanagerdmailsubscribe.view.partialRootPath}
+        }
+        templateRootPaths {
+            10 = {$plugin.tx_femanager.view.templateRootPath}
+            20 = {$plugin.tx_femanagerdmailsubscribe.view.templateRootPath}
+        }
+    }
+}

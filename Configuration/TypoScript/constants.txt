@@ -1,0 +1,12 @@
+plugin.tx_femanagerdmailsubscribe {
+    view {
+        # cat=plugin.tx_tx_femanagerdmailsubscribe/file; type=string; label= Path to template root (FE)
+        templateRootPath = EXT:femanager_dmail_subscribe/Resources/Private/Templates/
+
+        # cat=plugin.tx_tx_femanagerdmailsubscribe/file; type=string; label= Path to template partials (FE)
+        partialRootPath = EXT:femanager_dmail_subscribe/Resources/Private/Partials/
+
+        # cat=plugin.tx_tx_femanagerdmailsubscribe/file; type=string; label= Path to template layouts (FE)
+        layoutRootPath = EXT:femanager_dmail_subscribe/Resources/Private/Layouts/
+    }
+}

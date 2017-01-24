@@ -1,0 +1,16 @@
+<div class="femanager_fieldset femanager_firstname control-group" xmlns:f="http://www.w3.org/1999/html">
+	<label for="femanager_field_moduleSysDmailNewsletter" class="control-label">
+		<f:translate key="label.moduleSysDmailCategory" extensionName="FemanagerDmailSubscribe" />
+	</label>
+	<div class="controls">
+		<f:for each="{dmailCategories}" as="dmailCategory">
+			<label for="femanager_field_moduleSysDmailCategory_{dmailCategory.uid}">
+				<f:form.checkbox
+						id="femanager_field_moduleSysDmailCategory_{dmailCategory.uid}"
+						property="moduleSysDmailCategory"
+						multiple="true"
+						value="{dmailCategory.uid}" /> {dmailCategory.category}
+			</label>
+		</f:for>
+	</div>
+</div>

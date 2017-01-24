@@ -1,0 +1,12 @@
+tx_femanager {
+    flexForm {
+        new {
+            addFieldOptions {
+                moduleSysDmailNewsletter = Newsletter subscription
+                moduleSysDmailCategory = Newsletter category
+                moduleSysDmailHtml = HTML newsletter
+            }
+        }
+        edit < tx_femanager.flexForm.new
+    }
+}

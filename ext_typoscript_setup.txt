@@ -1,0 +1,34 @@
+config.tx_extbase {
+    persistence {
+        classes {
+            In2\Femanager\Domain\Model\User {
+                subclasses {
+                    0 = Derhansen\FemanagerDmailSubscribe\Domain\Model\User
+                }
+            }
+
+            Derhansen\FemanagerDmailSubscribe\Domain\Model\User {
+                mapping {
+                    tableName = fe_users
+                    recordType = 0
+                }
+            }
+
+            Derhansen\FemanagerDmailSubscribe\Domain\Model\DmailCategory {
+                mapping {
+                    tableName = sys_dmail_category
+                    recordType = \Derhansen\FemanagerDmailSubscribe\Domain\Model\DmailCategory
+                    columns {
+                        category.mapOnProperty = category
+                    }
+                }
+            }
+        }
+    }
+
+    objects {
+        In2\Femanager\Controller\NewController.className = Derhansen\FemanagerDmailSubscribe\Controller\NewController
+        In2\Femanager\Controller\EditController.className = Derhansen\FemanagerDmailSubscribe\Controller\EditController
+    }
+
+}
