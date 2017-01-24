@@ -1,7 +1,7 @@
 config.tx_extbase {
     persistence {
         classes {
-            In2\Femanager\Domain\Model\User {
+            In2code\Femanager\Domain\Model\User {
                 subclasses {
                     0 = Derhansen\FemanagerDmailSubscribe\Domain\Model\User
                 }
@@ -27,8 +27,8 @@ config.tx_extbase {
     }
 
     objects {
-        In2\Femanager\Controller\NewController.className = Derhansen\FemanagerDmailSubscribe\Controller\NewController
-        In2\Femanager\Controller\EditController.className = Derhansen\FemanagerDmailSubscribe\Controller\EditController
+        In2code\Femanager\Controller\NewController.className = Derhansen\FemanagerDmailSubscribe\Controller\NewController
+        In2code\Femanager\Controller\EditController.className = Derhansen\FemanagerDmailSubscribe\Controller\EditController
     }
 
 }

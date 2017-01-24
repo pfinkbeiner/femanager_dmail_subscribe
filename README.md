@@ -12,6 +12,11 @@ The following fields will be available in femanager plugin:
 * Newsletter category
 * HTML newsletter
 
+New and existing users will be able to subscribe to a direct mail newsletter and select direct mail categories if
+enabled.
+
+![Frontend view](Documentation/Images/femanager-frontend.png)
+
 ## Installation
 
 1. Install the extension

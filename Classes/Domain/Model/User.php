@@ -17,7 +17,7 @@ namespace Derhansen\FemanagerDmailSubscribe\Domain\Model;
 /**
  * Class User
  */
-class User extends \In2\Femanager\Domain\Model\User
+class User extends \In2code\Femanager\Domain\Model\User
 {
     /**
      * @var bool

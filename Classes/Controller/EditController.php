@@ -19,7 +19,7 @@ use \Derhansen\FemanagerDmailSubscribe\Domain\Model\User;
 /**
  * Class EditController
  */
-class EditController extends \In2\Femanager\Controller\EditController
+class EditController extends \In2code\Femanager\Controller\EditController
 {
 
     /**
@@ -44,8 +44,8 @@ class EditController extends \In2\Femanager\Controller\EditController
      * action update
      *
      * @param \Derhansen\FemanagerDmailSubscribe\Domain\Model\User $user
-     * @validate $user In2\Femanager\Domain\Validator\ServersideValidator
-     * @validate $user In2\Femanager\Domain\Validator\PasswordValidator
+     * @validate $user In2code\Femanager\Domain\Validator\ServersideValidator
+     * @validate $user In2code\Femanager\Domain\Validator\PasswordValidator
      * @return void
      */
     public function updateAction(User $user)
