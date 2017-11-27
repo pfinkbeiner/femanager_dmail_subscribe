@@ -4,15 +4,15 @@
   "description": "Adds direct mail fields to femanager",
   "homepage": "https://github.com/derhansen/femanager_dmail_subscribe",
   "support": {
-	"issues": "https://github.com/derhansen/femanager_dmail_subscribe/issues"
+    "issues": "https://github.com/derhansen/femanager_dmail_subscribe/issues"
   },
   "authors": [
-	{
-	  "name": "Torben Hansen",
-	  "email": "derhansen@gmail.com",
-	  "homepage": "http://www.derhansen.com",
-	  "role": "Developer"
-	}
+    {
+      "name": "Torben Hansen",
+      "email": "derhansen@gmail.com",
+      "homepage": "http://www.derhansen.com",
+      "role": "Developer"
+    }
   ],
   "keywords": ["TYPO3 CMS", "femanager", "direct mail"],
   "license": ["GPL-2.0+"],
@@ -21,8 +21,8 @@
     "typo3-ter/femanager-dmail-subscribe": "self.version"
   },
   "autoload": {
-	"psr-4": {
-	  "Derhansen\\FemanagerDmailSubscribe\\": "Classes"
-	}
+    "psr-4": {
+      "Derhansen\\FemanagerDmailSubscribe\\": "Classes"
+    }
   }
 }
