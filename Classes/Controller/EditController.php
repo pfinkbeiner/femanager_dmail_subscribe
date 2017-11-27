@@ -14,19 +14,30 @@ namespace Derhansen\FemanagerDmailSubscribe\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use \Derhansen\FemanagerDmailSubscribe\Domain\Model\User;
+use Derhansen\FemanagerDmailSubscribe\Domain\Repository\DmailCategoryRepository;
 
 /**
  * Class EditController
  */
 class EditController extends \In2code\Femanager\Controller\EditController
 {
-
     /**
+     * Directmail Category Repository
+     *
      * @var \Derhansen\FemanagerDmailSubscribe\Domain\Repository\DmailCategoryRepository
-     * @inject
      */
     protected $dmailCategoryRepository;
+
+    /**
+     * DI for dmailCategoryRepository
+     *
+     * @param DmailCategoryRepository $dmailCategoryRepository
+     * @return void
+     */
+    public function injectDmailCategoryRespository(DmailCategoryRepository $dmailCategoryRepository)
+    {
+        $this->dmailCategoryRepository = $dmailCategoryRepository;
+    }
 
     /**
      * Edit action
@@ -41,14 +52,26 @@ class EditController extends \In2code\Femanager\Controller\EditController
     }
 
     /**
+     * Workaround to avoid php7 warnings of wrong type hint.
+     */
+    public function initializeUpdateAction()
+    {
+        if ($this->arguments->hasArgument('user')) {
+            /** @var \Derhansen\FemanagerDmailSubscribe\Xclass\Extbase\Controller\Argument $user */
+            $user = $this->arguments['user'];
+            $user->setDataType(\Derhansen\FemanagerDmailSubscribe\Domain\Model\User::class);
+        }
+    }
+
+    /**
      * action update
      *
-     * @param \Derhansen\FemanagerDmailSubscribe\Domain\Model\User $user
+     * @param \In2code\Femanager\Domain\Model\User $user
      * @validate $user In2code\Femanager\Domain\Validator\ServersideValidator
      * @validate $user In2code\Femanager\Domain\Validator\PasswordValidator
      * @return void
      */
-    public function updateAction(User $user)
+    public function updateAction(\In2code\Femanager\Domain\Model\User $user)
     {
         parent::updateAction($user);
     }

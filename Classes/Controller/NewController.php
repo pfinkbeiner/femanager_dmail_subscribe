@@ -14,28 +14,51 @@ namespace Derhansen\FemanagerDmailSubscribe\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use \Derhansen\FemanagerDmailSubscribe\Domain\Model\User;
+use Derhansen\FemanagerDmailSubscribe\Domain\Repository\DmailCategoryRepository;
 
 /**
  * Class NewController
  */
 class NewController extends \In2code\Femanager\Controller\NewController
 {
-
     /**
+     * Directmail Category Repository
+     *
      * @var \Derhansen\FemanagerDmailSubscribe\Domain\Repository\DmailCategoryRepository
-     * @inject
      */
     protected $dmailCategoryRepository;
 
     /**
+     * DI for dmailCategoryRepository
+     *
+     * @param DmailCategoryRepository $dmailCategoryRepository
+     * @return void
+     */
+    public function injectDmailCategoryRespository(DmailCategoryRepository $dmailCategoryRepository)
+    {
+        $this->dmailCategoryRepository = $dmailCategoryRepository;
+    }
+
+    /**
+     * Workaround to avoid php7 warnings of wrong type hint.
+     */
+    public function initializeNewAction()
+    {
+        if ($this->arguments->hasArgument('user')) {
+            /** @var \Derhansen\FemanagerDmailSubscribe\Xclass\Extbase\Controller\Argument $user */
+            $user = $this->arguments['user'];
+            $user->setDataType(\Derhansen\FemanagerDmailSubscribe\Domain\Model\User::class);
+        }
+    }
+
+    /**
      * New action
      *
-     * @param User $user
+     * @param \In2code\Femanager\Domain\Model\User $user
      * @dontvalidate $user
      * @return void
      */
-    public function newAction(User $user = null)
+    public function newAction(\In2code\Femanager\Domain\Model\User $user = null)
     {
         $dmailCategories = $this->dmailCategoryRepository->findAll();
         $this->view->assign('dmailCategories', $dmailCategories);
@@ -43,14 +66,26 @@ class NewController extends \In2code\Femanager\Controller\NewController
     }
 
     /**
-     * action create
+     * Workaround to avoid php7 warnings of wrong type hint.
+     */
+    public function initializeCreateAction()
+    {
+        if ($this->arguments->hasArgument('user')) {
+            /** @var \Derhansen\FemanagerDmailSubscribe\Xclass\Extbase\Controller\Argument $user */
+            $user = $this->arguments['user'];
+            $user->setDataType(\Derhansen\FemanagerDmailSubscribe\Domain\Model\User::class);
+        }
+    }
+
+    /**
+     * Create action
      *
-     * @param \Derhansen\FemanagerDmailSubscribe\Domain\Model\User $user
+     * @param \In2code\Femanager\Domain\Model\User $user
      * @validate $user In2code\Femanager\Domain\Validator\ServersideValidator
      * @validate $user In2code\Femanager\Domain\Validator\PasswordValidator
      * @return void
      */
-    public function createAction(User $user)
+    public function createAction(\In2code\Femanager\Domain\Model\User $user)
     {
         parent::createAction($user);
     }
