@@ -1,5 +1,5 @@
 <?php
-namespace Derhansen\FemanagerDmailSubscribe\Xclass\Extbase\Controller;
+namespace Derhansen\FemanagerDmailSubscribe\Xclass\Extbase\Mvc\Controller;
 
 /*
  * This file is part of the TYPO3 CMS project.
