@@ -83,6 +83,7 @@ class NewController extends \In2code\Femanager\Controller\NewController
      * @param \In2code\Femanager\Domain\Model\User $user
      * @validate $user In2code\Femanager\Domain\Validator\ServersideValidator
      * @validate $user In2code\Femanager\Domain\Validator\PasswordValidator
+     * @validate $user In2code\Femanager\Domain\Validator\CaptchaValidator
      * @return void
      */
     public function createAction(\In2code\Femanager\Domain\Model\User $user)
