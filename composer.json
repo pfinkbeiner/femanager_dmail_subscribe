@@ -15,9 +15,8 @@
     }
   ],
   "keywords": ["TYPO3 CMS", "femanager", "direct mail"],
-  "license": ["GPL-2.0+"],
+  "license": ["GPL-2.0-or-later"],
   "replace": {
-    "femanager_dmail_subscribe": "self.version",
     "typo3-ter/femanager-dmail-subscribe": "self.version"
   },
   "autoload": {
