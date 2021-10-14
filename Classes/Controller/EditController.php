@@ -68,8 +68,6 @@ class EditController extends \In2code\Femanager\Controller\EditController
      * action update
      *
      * @param \In2code\Femanager\Domain\Model\User $user
-     * @validate $user In2code\Femanager\Domain\Validator\ServersideValidator
-     * @validate $user In2code\Femanager\Domain\Validator\PasswordValidator
      * @return void
      */
     public function updateAction(\In2code\Femanager\Domain\Model\User $user)
